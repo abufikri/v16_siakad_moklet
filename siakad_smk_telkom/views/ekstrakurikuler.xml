@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- moklet.ekstra tree view -->
+        <record id="moklet_ekstra_view_tree" model="ir.ui.view">
+            <field name="name">moklet.ekstra.view.tree</field>
+            <field name="model">moklet.ekstra</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="pembina_id"/>
+                    <field name="siswa_ids"/>
+                </tree>
+            </field>
+        </record>
+        <!-- moklet.ekstra form view -->
+        <record id="moklet_ekstra_view_form" model="ir.ui.view">
+            <field name="name">moklet.ekstra.view.form</field>
+            <field name="model">moklet.ekstra</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="name"/>
+                            <field name="pembina_id"/>
+                            <field name="keterangan"/>
+                        </group>
+                        <notebook>
+                            <page name="siswa" string="Daftar Siswa">
+                                <field name="siswa_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="nis"/>
+                                        <field name="jenis_kelamin"/>
+                                        <field name="no_hp"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- moklet.ekstra action window -->
+        <record id="moklet_ekstra_action" model="ir.actions.act_window">
+            <field name="name">Ekstrakurikuler</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">moklet.ekstra</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="ekstra_menu_act" name="Ekstrakurikuler" parent="master_menu_categ" action="moklet_ekstra_action" sequence="50"/>
+    
+        
+    
+    </data>
+    
+</odoo>

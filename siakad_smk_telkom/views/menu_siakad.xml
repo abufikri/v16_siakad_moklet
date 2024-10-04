@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+        <menuitem id="siakad_menu_root" name="SIAKAD SMK Telkom" sequence="1"/>
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="master_menu_categ" name="Master" parent="siakad_menu_root" sequence="10" groups="group_moklet_guru,group_moklet_manager"/>
+    
+        
+    
+    </data>
+    
+</odoo>

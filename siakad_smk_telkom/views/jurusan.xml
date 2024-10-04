@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- moklet.jurusan tree view -->
+        <record id="moklet_jurusan_view_tree" model="ir.ui.view">
+            <field name="name">moklet.jurusan.view.tree</field>
+            <field name="model">moklet.jurusan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="deskripsi"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- moklet.jurusan form view -->
+        <record id="moklet_jurusan_view_form" model="ir.ui.view">
+            <field name="name">moklet.jurusan.view.form</field>
+            <field name="model">moklet.jurusan</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="name"/>
+                            <field name="deskripsi"/>
+                            
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- moklet.jurusan action window -->
+        <record id="moklet_jurusan_action" model="ir.actions.act_window">
+            <field name="name">Data Jurusan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">moklet.jurusan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="jurusan_menu_act" name="Jurusan SMK" parent="master_menu_categ" action="moklet_jurusan_action" sequence="20"/>
+    
+        
+    
+    </data>
+    
+</odoo>

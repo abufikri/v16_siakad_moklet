@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- moklet.mapel tree view -->
+        <record id="moklet_mapel_view_tree" model="ir.ui.view">
+            <field name="name">moklet.mapel.view.tree</field>
+            <field name="model">moklet.mapel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="jenis"/>
+                    <field name="guru_id"/>
+                    <field name="keterangan"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- moklet.mapel form view -->
+        <record id="moklet_mapel_view_form" model="ir.ui.view">
+            <field name="name">moklet.mapel.view.form</field>
+            <field name="model">moklet.mapel</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="name"/>
+                            <field name="jenis"/>
+                            <field name="guru_id"/>
+                            <field name="keterangan"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- moklet.mapel action window -->
+        <record id="moklet_mapel_action" model="ir.actions.act_window">
+            <field name="name">Mata Pelajaran</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">moklet.mapel</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mapel_menu_act" name="Mata Pelajaran" parent="master_menu_categ" action="moklet_mapel_action" sequence="70"/>
+    
+        
+    
+    </data>
+    
+</odoo>

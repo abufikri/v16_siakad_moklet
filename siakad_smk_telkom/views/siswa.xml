@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- moklet.siswa tree view -->
+        <record id="moklet_siswa_view_tree" model="ir.ui.view">
+            <field name="name">moklet.siswa.view.tree</field>
+            <field name="model">moklet.siswa</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="nis"/>
+                    <field name="tmp_lahir"/>
+                    <field name="tgl_lahir"/>
+                    <field name="jenis_kelamin"/>
+                    <field name="no_hp"/>
+                </tree>
+            </field>
+        </record>
+        <!-- moklet.siswa form view -->
+        <record id="moklet_siswa_view_form" model="ir.ui.view">
+            <field name="name">moklet.siswa.view.form</field>
+            <field name="model">moklet.siswa</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group string="Data Siswa">
+                            <!-- Add your fields here -->
+                            <group>
+                                <field name="name"/>
+                                <field name="nis"/>
+                                <field name="tmp_lahir"/>
+                            </group>
+                            <group>
+                                <field name="tgl_lahir"/>
+                                <field name="jenis_kelamin"/>
+                                <field name="no_hp"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="alamat"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- moklet.siswa action window -->
+        <record id="moklet_siswa_action" model="ir.actions.act_window">
+            <field name="name">Data Siswa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">moklet.siswa</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="siswa_menu_act" name="Data Siswa" parent="siakad_menu_root" action="moklet_siswa_action" sequence="1"/>
+    
+        
+    
+    </data>
+    
+</odoo>

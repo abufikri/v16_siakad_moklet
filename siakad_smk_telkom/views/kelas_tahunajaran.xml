@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- moklet.kelas.tahun.ajaran tree view -->
+        <record id="moklet_kelas_tahunajaran_view_tree" model="ir.ui.view">
+            <field name="name">moklet.kelas.tahunajaran.view.tree</field>
+            <field name="model">moklet.kelas.tahunajaran</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="kelas_id"/>
+                    <field name="tahunajaran_id"/>
+                    <field name="walikelas_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- moklet.kelas.tahunajaran form view -->
+        <record id="moklet_kelas_tahunajaran_view_form" model="ir.ui.view">
+            <field name="name">moklet.kelas.tahunajaran.view.form</field>
+            <field name="model">moklet.kelas.tahunajaran</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="kelas_id"/>
+                            <field name="tahunajaran_id"/>
+                            <field name="walikelas_id"/>
+                            <field name="jml_siswa"/>
+                        </group>
+                        <notebook>
+                            <page name="siswa" string="Daftar Siswa">
+                                <field name="siswa_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="nis"/>
+                                        <field name="jenis_kelamin"/>
+                                        <field name="no_hp"/>
+                                    </tree>
+                                </field>
+                                
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- moklet.kelas.tahunajaran action window -->
+        <record id="moklet_kelas_tahunajaran_action" model="ir.actions.act_window">
+            <field name="name">Pembagian Kelas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">moklet.kelas.tahunajaran</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="pembagian_kelas_menu_act" name="Pembagian Kelas" parent="master_menu_categ" action="moklet_kelas_tahunajaran_action" sequence="40"/>
+
+    
+        
+    
+    </data>
+    
+</odoo>
